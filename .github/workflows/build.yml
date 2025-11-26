@@ -62,17 +62,17 @@ jobs:
       run: |
         cd target/${{ matrix.target }}/release
         if [ "${{ matrix.os }}" == "windows-latest" ]; then
-          mv rrconverter.exe ../../../rrconverter-${{ matrix.name }}.exe
+          mv rrmockdecoder.exe ../../../rrmockdecoder-${{ matrix.name }}.exe
         else
-          mv rrconverter ../../../rrconverter-${{ matrix.name }}
+          mv rrmockdecoder ../../../rrmockdecoder-${{ matrix.name }}
         fi
       shell: bash
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
       with:
-        name: rrconverter-${{ matrix.name }}
-        path: rrconverter-${{ matrix.name }}*
+        name: rrmockdecoder-${{ matrix.name }}
+        path: rrmockdecoder-${{ matrix.name }}*
 
   release:
     name: Create Release
